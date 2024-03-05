@@ -23,13 +23,6 @@ resource "aws_security_group" "instance_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
 }
 
 resource "aws_iam_instance_profile" "InstanceConnectProfile" {
@@ -64,7 +57,7 @@ resource "aws_instance" "InstanceconnectEC2" {
   iam_instance_profile = aws_iam_instance_profile.InstanceConnectProfile.name
 
   tags = {
-    Name = "instance"
+    Name = "EC2instance"
   }
 }
 
