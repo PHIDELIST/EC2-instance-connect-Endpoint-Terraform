@@ -1,4 +1,15 @@
-## Connecting to the EC2 in private subnet Using ssh and the open-tunnel AWS CLI command
+## Avoiding the use of basiton Host to connect to ec2 in private subnet
+AWS EC2 instance connect endpoint service was introduced by AWS to remove the headache of provisioning and configuring a basiton host just to connect to instances on private subnet.
+This project is a simple terraform code that will provision an EC2 instance in a private subnet with instance connect endpoint already configure allowing you to easily connect to the EC2 instance from the internet.
+#### Architecture
+![Blank diagram (2)](https://github.com/PHIDELIST/EC2-instance-connect-Terraform/assets/64526896/134051c6-30fc-4fde-8659-830b289052a4)
+
+### Deployment
+Run the following commands to deploy the resources
++ terraform init
++ terraform apply
+  
+### Connecting to the EC2 in private subnet Using ssh and the open-tunnel AWS CLI command
 + The -o proxy command encloses the open-tunnel command that creates the private tunnel to the instance.
 
 ```
@@ -12,6 +23,6 @@ ec2-user@i-0123456789example – Specify the username of the AMI that was used t
 
 --instance-id – Specify the ID of the instance to connect to. Alternatively, specify %h, which extracts the instance ID from the user.
 
-#### Architecture
+## Clean UP
+run ```terraform destroy```
 
-![Blank diagram (2)](https://github.com/PHIDELIST/EC2-instance-connect-Terraform/assets/64526896/134051c6-30fc-4fde-8659-830b289052a4)
