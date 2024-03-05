@@ -12,4 +12,6 @@ ec2-user@i-0123456789example – Specify the username of the AMI that was used t
 
 --instance-id – Specify the ID of the instance to connect to. Alternatively, specify %h, which extracts the instance ID from the user.
 
+#### Architecture
 
+![Blank diagram (2)](https://github.com/PHIDELIST/EC2-instance-connect-Terraform/assets/64526896/134051c6-30fc-4fde-8659-830b289052a4)
