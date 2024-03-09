@@ -1,7 +1,5 @@
 provider "aws" {
   region = "us-east-1" 
-  access_key = ""
-  secret_key = ""
 }
 
 resource "aws_vpc" "ec2instanceconnectVPC" {
@@ -55,6 +53,7 @@ resource "aws_instance" "InstanceconnectEC2" {
   subnet_id       = aws_subnet.private_subnet.id
   vpc_security_group_ids = [aws_security_group.instance_sg.id]
   iam_instance_profile = aws_iam_instance_profile.InstanceConnectProfile.name
+  key_name        = "<key_pair_name>" # Replace <key_pair_name> with the key pair name you created
 
   tags = {
     Name = "EC2instance"
@@ -65,3 +64,6 @@ resource "aws_ec2_instance_connect_endpoint" "connectendpoint" {
   subnet_id = aws_subnet.private_subnet.id
 }
 
+output "instance_id" {
+  value = aws_instance.InstanceconnectEC2.id
+}
