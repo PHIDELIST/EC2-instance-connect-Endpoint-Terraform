@@ -1,4 +1,4 @@
-## Avoiding the use of basiton Host to connect to ec2 in private subnet
+## Avoiding the use of bastion Host to connect to ec2 in private subnet
 AWS EC2 instance connect endpoint service was introduced by AWS to remove the headache of provisioning and configuring a basiton host just to connect to instances on private subnet.
 This project is a simple terraform code that will provision an EC2 instance in a private subnet with instance connect endpoint already configure allowing you to easily connect to the EC2 instance from the internet.
 #### Architecture
